@@ -7,9 +7,6 @@ const cors = require('cors')
 //Configure Port
 const PORT = parseInt(process.argv[2]) || parseInt(process.env.PORT) || 3000
 
-//Create an instance of express
-const app = express()
-
 //Function to get cookies
 function getCookies(count=1) {
     if(count == 1) {
@@ -28,6 +25,9 @@ function getCookies(count=1) {
         return cookieCollection
     }
 }
+
+//Create an instance of express
+const app = express()
 
 //Middlewares
 app.use(morgan('combined'))
